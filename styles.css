@@ -1,0 +1,62 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 16px;
+  --width-height: max(150vw, 150dvh);
+}
+
+@media (max-width: 350px) {
+  :root {
+    font-size: calc(100vw / 21.875);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.spinning-background {
+  position: absolute;
+  background: linear-gradient(purple 0%, black 45% 55%, blue 100%);
+  width: var(--width-height);
+  height: var(--width-height);
+  top: calc((var(--width-height) / 2 - 100dvh / 2) * -1);
+  left: calc((var(--width-height) / 2 - 100vw / 2) * -1);
+  animation-name: spin;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  border: solid blue 1px;
+  border-radius: 1rem;
+}
