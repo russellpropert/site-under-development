@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
-  --width-height: max(150vw, 150dvh);
+  --widthAndHeight: max(142vw, 142dvh);
 }
 
 @media (max-width: 350px) {
@@ -18,30 +18,35 @@
 }
 
 body {
-  position: fixed;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overscroll-behavior: none;
+}
+
+#background-container {
+  position: fixed;
   width: 100vw;
   height: 100dvh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
 }
 
-.spinning-background {
-  position: absolute;
-  background: linear-gradient(purple 0%, black 45% 55%, blue 100%);
-  width: var(--width-height);
-  height: var(--width-height);
-  top: calc((var(--width-height) / 2 - 100dvh / 2) * -1);
-  left: calc((var(--width-height) / 2 - 100vw / 2) * -1);
-  animation-name: spin;
-  animation-duration: 45s;
-  animation-iteration-count: infinite;
+#spinning-background {
+  background: linear-gradient(blue 0%, black 40% 60%, purple 100%);
+  min-width: var(--widthAndHeight);
+  min-height: var(--widthAndHeight);
+  border-radius: 50%;
+  background-color: white;
+  animation-name: spinning-background;
   animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  z-index: inherit;
 }
 
-@keyframes spin {
+@keyframes spinning-background {
   0% {
     rotate: 0deg;
   }
@@ -51,7 +56,11 @@ body {
 }
 
 main {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
   z-index: 1;
 }
 
@@ -61,4 +70,5 @@ main {
   padding: 2rem;
   border: solid blue 1px;
   border-radius: 1rem;
+  z-index: inherit;
 }
