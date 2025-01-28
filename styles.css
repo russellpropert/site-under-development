@@ -41,7 +41,7 @@ body {
   background-color: white;
   animation-name: spinning-background;
   animation-timing-function: linear;
-  animation-duration: 45s;
+  animation-duration: 60s;
   animation-iteration-count: infinite;
   z-index: inherit;
 }
