@@ -8,7 +8,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
-  --width-height: max(150vw, 150dvh);
+  --width-height: max(150vw, 150vh);
 }
 
 @media (max-width: 350px) {
@@ -22,7 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -31,7 +31,7 @@ body {
   background: linear-gradient(purple 0%, black 45% 55%, blue 100%);
   width: var(--width-height);
   height: var(--width-height);
-  top: calc((var(--width-height) / 2 - 100dvh / 2) * -1);
+  top: calc((var(--width-height) / 2 - 100vh / 2) * -1);
   left: calc((var(--width-height) / 2 - 100vw / 2) * -1);
   animation-name: spin;
   animation-duration: 60s;
